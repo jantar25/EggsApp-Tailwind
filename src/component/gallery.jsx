@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Card from './Card'
 import Footer from './Footer'
 import Search from './search'
+import Toolbar from '../component/navbar'
 
 const Navbar = () => {
     const [images,setImages] = useState([])
@@ -20,7 +21,11 @@ const Navbar = () => {
 
     return (
         <div className='mx-auto'>
-            <Search searchText={(text)=>setTerm(text)} />
+            <div className='h-full w-full bg-bkg-img bg-cover bg-no-repeat mb-10'>
+                <Toolbar />
+                <Search searchText={(text)=>setTerm(text)} />
+            </div>
+
             <div className='container mx-auto'>
                 {!isLoading && images.length === 0 && <h1 className="text-6xl text-center mx-auto
                  text-teal-600 mt-32">No Images Found</h1>}
