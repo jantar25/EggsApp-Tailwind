@@ -37,7 +37,6 @@ const Navbar = () => {
                     ))}
                 </div>}
             </div>
-            <Footer />
         </div>
     )
 }
